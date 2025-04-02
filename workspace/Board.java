@@ -219,8 +219,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                 endSquare.put(currPiece);
                 moved = true;
                 fromMoveSquare.removePiece(); 
-                // undo move if king puts itself in check
-                if(currPiece instanceof King && isInCheck(whiteTurn)){
+                // undo move if piece puts its own king in check
+                if(isInCheck(whiteTurn)){
                     fromMoveSquare.put(currPiece);
                     endSquare.removePiece();
                     if(capturedPiece != null){
